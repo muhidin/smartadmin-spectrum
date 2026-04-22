@@ -1,0 +1,255 @@
+/*
+Theme Name: SmartAdmin Spectrum
+Theme URI: http://abudata.com
+Author: Muhidin Saimin
+Author URI: http://muhidin.web.id
+Description: A professional and lightweight theme designed for Digital Office Specialist classes at Rumah Gemilang Indonesia. Features a flexible header and dynamic branding options.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: smartadmin-spectrum
+Tags: custom-menu, custom-logo, education, two-columns, flexible-header, translation-ready
+
+SmartAdmin Spectrum is distributed under the terms of the GNU GPL.
+*/
+
+/**
+ * Table of Contents:
+ * 1.0 - Root Variables
+ * 2.0 - Reset & Base Styles
+ * 3.0 - Layout & Containers
+ * 4.0 - Header Styling
+ * 5.0 - Navigation & Menus
+ * 6.0 - Brand & Logo Layouts
+ * 7.0 - Content Sections (Hero & Grid)
+ * 8.0 - Single Post & Pages
+ * 9.0 - Footer
+ * 10.0 - Media Queries
+ */
+
+/* 1.0 - Root Variables */
+:root {
+    --primary-blue: #0056b3; 
+    --accent-red: #e63946;   
+    --light-bg: #f4f7f6;
+    --dark-text: #333333;
+    --white: #ffffff;
+}
+
+/* 2.0 - Reset & Base Styles */
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-text);
+    background-color: var(--light-bg);
+    margin: 0;
+}
+
+a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: var(--accent-red);
+}
+
+/* 3.0 - Layout & Containers */
+.container {
+    width: 90%;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+/* 4.0 - Header Styling */
+header {
+    background: var(--white);
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+/* 5.0 - Navigation & Menus */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+/* Dropdown Support */
+nav ul li ul.sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--white);
+    min-width: 200px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: none;
+    flex-direction: column;
+    z-index: 999;
+    border-top: 3px solid var(--accent-red);
+    padding: 10px 0;
+}
+
+nav ul li:hover > ul.sub-menu {
+    display: flex;
+}
+
+nav ul li ul.sub-menu li a {
+    padding: 10px 20px;
+    display: block;
+    font-size: 0.95rem;
+    color: var(--dark-text);
+    border-bottom: 1px solid #eee;
+}
+
+nav ul li ul.sub-menu li a:hover {
+    background-color: var(--light-bg);
+    color: var(--primary-blue);
+    padding-left: 25px;
+}
+
+.menu-item-has-children > a::after {
+    content: ' ▾';
+    font-size: 0.8rem;
+}
+
+/* 6.0 - Brand & Logo Layouts */
+.brand-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+/* Stacked Mode */
+.brand-stacked {
+    flex-direction: column;
+    text-align: center;
+}
+
+.brand-stacked img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+/* Inline Mode */
+.brand-inline {
+    flex-direction: row;
+    text-align: left;
+    gap: 15px;
+}
+
+.brand-inline img {
+    height: 60px; 
+    width: auto;
+}
+
+/* Typography for Brand */
+.text-blue-red-dynamic {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--primary-blue);
+    display: block;
+    line-height: 1.1;
+}
+
+.site-tagline {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 5px;
+    font-weight: 600;
+}
+
+/* 7.0 - Content Sections (Hero & Grid) */
+.hero {
+    background: var(--white);
+    padding: 60px 40px;
+    border-radius: 12px;
+    text-align: center;
+    margin: 40px 0;
+    border-top: 5px solid var(--primary-blue);
+}
+
+.btn-cta {
+    background: var(--accent-red);
+    color: white !important;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.post-card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 8px;
+    border-bottom: 4px solid var(--primary-blue);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* 8.0 - Single Post & Pages */
+.single-post-container {
+    background: var(--white);
+    padding: 40px;
+    margin: 40px auto;
+    border-radius: 12px;
+}
+
+.entry-meta {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+/* 9.0 - Footer */
+footer {
+    background: var(--primary-blue);
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    margin-top: 60px;
+}
+
+footer a {
+    color: #ffd1d1;
+}
+
+/* 10.0 - Media Queries */
+@media (max-width: 768px) {
+    .header-flex {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .brand-inline {
+        flex-direction: column;
+        text-align: center;
+    }
+}
