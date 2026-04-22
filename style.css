@@ -1,10 +1,12 @@
 /*
 Theme Name: SmartAdmin Spectrum
-Theme URI: http://abudata.com
+Theme URI: https://muhidin.web.id/smartadmin-spectrum/
 Author: Muhidin Saimin
 Author URI: http://muhidin.web.id
 Description: A professional and lightweight theme designed for Digital Office Specialist classes at Rumah Gemilang Indonesia. Features a flexible header and dynamic branding options.
 Version: 1.0.0
+Tested up to: 6.4
+Requires PHP: 7.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: smartadmin-spectrum
@@ -17,14 +19,15 @@ SmartAdmin Spectrum is distributed under the terms of the GNU GPL.
  * Table of Contents:
  * 1.0 - Root Variables
  * 2.0 - Reset & Base Styles
- * 3.0 - Layout & Containers
- * 4.0 - Header Styling
- * 5.0 - Navigation & Menus
- * 6.0 - Brand & Logo Layouts
- * 7.0 - Content Sections (Hero & Grid)
- * 8.0 - Single Post & Pages
- * 9.0 - Footer
- * 10.0 - Media Queries
+ * 3.0 - WordPress Core Classes
+ * 4.0 - Layout & Containers
+ * 5.0 - Header Styling
+ * 6.0 - Navigation & Menus
+ * 7.0 - Brand & Logo Layouts
+ * 8.0 - Content Sections (Hero & Grid)
+ * 9.0 - Single Post & Pages
+ * 10.0 - Footer
+ * 11.0 - Media Queries
  */
 
 /* 1.0 - Root Variables */
@@ -55,14 +58,38 @@ a:hover {
     color: var(--accent-red);
 }
 
-/* 3.0 - Layout & Containers */
+/* 3.0 - WordPress Core Classes */
+.alignleft { float: left; margin: 0.5em 1em 0.5em 0; }
+.alignright { float: right; margin: 0.5em 0 0.5em 1em; }
+.aligncenter { display: block; margin-left: auto; margin-right: auto; text-align: center; }
+.wp-caption { background: #fff; border: 1px solid #f0f0f0; max-width: 96%; padding: 5px 3px 10px; text-align: center; }
+.wp-caption img { border: 0 none; height: auto; margin: 0; max-width: 98%; padding: 0; width: auto; }
+.wp-caption-text { font-size: 0.8rem; margin: 0; padding: 0 5px 5px; }
+.sticky { background: #fff9c4; border: 1px solid #fbc02d; }
+.gallery-caption { font-size: 0.8rem; }
+.bypostauthor { font-style: italic; }
+
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal;
+}
+
+/* 4.0 - Layout & Containers */
 .container {
     width: 90%;
     max-width: 1140px;
     margin: 0 auto;
 }
 
-/* 4.0 - Header Styling */
+/* 5.0 - Header Styling */
 header {
     background: var(--white);
     padding: 20px 0;
@@ -76,7 +103,7 @@ header {
     padding: 15px 0;
 }
 
-/* 5.0 - Navigation & Menus */
+/* 6.0 - Navigation & Menus */
 nav ul {
     list-style: none;
     margin: 0;
@@ -127,7 +154,7 @@ nav ul li ul.sub-menu li a:hover {
     font-size: 0.8rem;
 }
 
-/* 6.0 - Brand & Logo Layouts */
+/* 7.0 - Brand & Logo Layouts */
 .brand-wrapper {
     display: flex;
     align-items: center;
@@ -174,7 +201,7 @@ nav ul li ul.sub-menu li a:hover {
     font-weight: 600;
 }
 
-/* 7.0 - Content Sections (Hero & Grid) */
+/* 8.0 - Content Sections (Hero & Grid) */
 .hero {
     background: var(--white);
     padding: 60px 40px;
@@ -208,7 +235,7 @@ nav ul li ul.sub-menu li a:hover {
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
-/* 8.0 - Single Post & Pages */
+/* 9.0 - Single Post & Pages */
 .single-post-container {
     background: var(--white);
     padding: 40px;
@@ -222,7 +249,7 @@ nav ul li ul.sub-menu li a:hover {
     margin-bottom: 20px;
 }
 
-/* 9.0 - Footer */
+/* 10.0 - Footer */
 footer {
     background: var(--primary-blue);
     color: white;
@@ -235,7 +262,7 @@ footer a {
     color: #ffd1d1;
 }
 
-/* 10.0 - Media Queries */
+/* 11.0 - Media Queries */
 @media (max-width: 768px) {
     .header-flex {
         flex-direction: column;

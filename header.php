@@ -17,16 +17,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="profile" href="https://gmpg.org/xfn/11">
 
-    <?php 
-    /**
-     * Default Favicon Fallback
-     * If the user hasn't set a Site Icon in the Customizer, 
-     * load the default favicon.ico from the images folder.
-     */
-    if ( ! ( function_exists( 'has_site_icon' ) && has_site_icon() ) ) : ?>
-        <link rel="shortcut icon" href="<?php echo esc_url( get_template_directory_uri() . '/images/favicon.ico' ); ?>" type="image/x-icon">
-    <?php endif; ?>
-
     <?php wp_head(); ?>
 </head>
 
