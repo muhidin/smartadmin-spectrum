@@ -27,15 +27,12 @@ function sas_setup() {
         'flex-width'  => true,
     ) );
 
-    // Add support for Site Icon (Favicon).
-    add_theme_support( 'site-icon' );
-
     // Register navigation menus.
     register_nav_menus( array(
         'primary' => esc_html__( 'Primary Menu', 'smartadmin-spectrum' ),
     ) );
 
-    // Switch default core markup for search form, comment form, and comments to output valid HTML5.
+    // Switch default core markup for search form, comment form, etc to output valid HTML5.
     add_theme_support( 'html5', array(
         'search-form',
         'comment-form',
@@ -45,6 +42,27 @@ function sas_setup() {
         'style',
         'script',
     ) );
+
+    /** * ADDITIONAL SUPPORTS (REQUIRED/RECOMMENDED BY WP SCANNER)
+     */
+    
+    // Add support for responsive embeds (YouTube, etc).
+    add_theme_support( 'responsive-embeds' );
+
+    // Add support for block styles (Gutenberg).
+    add_theme_support( 'wp-block-styles' );
+
+    // Add support for wide alignment for blocks.
+    add_theme_support( 'align-wide' );
+
+    // Add support for custom background.
+    add_theme_support( 'custom-background' );
+
+    // Add support for custom header images.
+    add_theme_support( 'custom-header' );
+
+    // Enqueue editor styles to match the frontend.
+    add_editor_style( 'style.css' );
 }
 add_action( 'after_setup_theme', 'sas_setup' );
 
@@ -112,6 +130,7 @@ add_action( 'customize_register', 'sas_customize_register' );
  * Sanitization callback for select and radio controls.
  */
 function sas_sanitize_select( $input, $setting ) {
-    $choices = $setting->manager->get_control( $setting->id )->choices;
+    $control = $setting->manager->get_control( $setting->id );
+    $choices = $control->choices;
     return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
 }

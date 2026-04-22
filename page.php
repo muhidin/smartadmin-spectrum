@@ -7,12 +7,18 @@
 
 get_header(); ?>
 
-<main class="container site-main">
+<main class="container site-main" style="margin-top: 40px; margin-bottom: 40px;">
     <?php while ( have_posts() ) : the_post(); ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             <header class="entry-header">
                 <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
             </header>
+
+            <?php if ( has_post_thumbnail() ) : ?>
+                <div class="post-thumbnail" style="margin-bottom: 30px;">
+                    <?php the_post_thumbnail( 'large', array( 'style' => 'width:100%; height:auto; border-radius:8px;' ) ); ?>
+                </div>
+            <?php endif; ?>
 
             <div class="entry-content">
                 <?php 

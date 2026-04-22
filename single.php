@@ -13,9 +13,16 @@ get_header(); ?>
             <header class="entry-header">
                 <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
                 <div class="entry-meta">
-                    <?php echo get_the_date(); ?> | <?php the_author(); ?>
+                    <span class="posted-on"><?php echo get_the_date(); ?></span> | 
+                    <span class="byline"><?php the_author(); ?></span>
                 </div>
             </header>
+
+            <?php if ( has_post_thumbnail() ) : ?>
+                <div class="post-thumbnail" style="margin-bottom: 30px;">
+                    <?php the_post_thumbnail( 'large', array( 'style' => 'width:100%; height:auto; border-radius:8px;' ) ); ?>
+                </div>
+            <?php endif; ?>
 
             <div class="entry-content">
                 <?php 
@@ -28,12 +35,17 @@ get_header(); ?>
                 ?>
             </div>
 
-            <footer class="entry-footer">
+            <footer class="entry-footer" style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
                 <?php the_tags( '<span class="tags-links">' . esc_html__( 'Tags: ', 'smartadmin-spectrum' ), ', ', '</span>' ); ?>
             </footer>
         </article>
 
-        <?php the_post_navigation(); ?>
+        <div class="post-navigation-wrapper" style="margin: 40px 0;">
+            <?php the_post_navigation( array(
+                'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'smartadmin-spectrum' ) . '</span> <span class="nav-title">%title</span>',
+                'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'smartadmin-spectrum' ) . '</span> <span class="nav-title">%title</span>',
+            ) ); ?>
+        </div>
 
         <?php 
         if ( comments_open() || get_comments_number() ) :

@@ -21,6 +21,15 @@ get_header(); ?>
         <?php if ( have_posts() ) : ?>
             <?php while ( have_posts() ) : the_post(); ?>
                 <article id="post-<?php the_ID(); ?>" <?php post_class( 'post-card' ); ?>>
+                    
+                    <?php if ( has_post_thumbnail() ) : ?>
+                        <div class="post-thumbnail">
+                            <a href="<?php the_permalink(); ?>">
+                                <?php the_post_thumbnail( 'medium', array( 'alt' => the_title_attribute( array( 'echo' => false ) ) ) ); ?>
+                            </a>
+                        </div>
+                    <?php endif; ?>
+
                     <header class="entry-header">
                         <?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '">', '</a></h2>' ); ?>
                     </header>
@@ -37,7 +46,9 @@ get_header(); ?>
                 </article>
             <?php endwhile; ?>
 
-            <?php the_posts_navigation(); ?>
+            <div class="pagination">
+                <?php the_posts_navigation(); ?>
+            </div>
 
         <?php else : ?>
             <p><?php esc_html_e( 'Maaf, belum ada materi yang tersedia saat ini.', 'smartadmin-spectrum' ); ?></p>
