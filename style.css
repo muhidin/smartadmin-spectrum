@@ -4,13 +4,13 @@ Theme URI: https://muhidin.web.id/smartadmin-spectrum/
 Author: Muhidin Saimin
 Author URI: http://muhidin.web.id
 Description: A professional and lightweight theme designed for Digital Office Specialist classes at Rumah Gemilang Indonesia. Features a flexible header and dynamic branding options.
-Version: 1.0.0
+Version: 1.1.0
 Tested up to: 6.4
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: smartadmin-spectrum
-Tags: custom-menu, custom-logo, education, two-columns, flexible-header, translation-ready
+Tags: custom-menu, custom-logo, education, one-columns, two-columns, three-columns, flexible-header, translation-ready, slider, responsive-layout, theme-options, threaded-comments, wide-blocks
 
 SmartAdmin Spectrum is distributed under the terms of the GNU GPL.
 */
@@ -87,6 +87,13 @@ a:hover {
     width: 90%;
     max-width: 1140px;
     margin: 0 auto;
+}
+
+.container-full {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 /* 5.0 - Header Styling */
@@ -222,9 +229,35 @@ nav ul li ul.sub-menu li a:hover {
 
 .post-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-bottom: 40px;
+}
+
+/* Grid column variations */
+.post-grid.grid-1-cols {
+    grid-template-columns: 1fr;
+}
+
+.post-grid.grid-2-cols {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.post-grid.grid-3-cols {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .post-grid.grid-2-cols,
+    .post-grid.grid-3-cols {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .post-grid.grid-3-cols {
+        grid-template-columns: 1fr;
+    }
 }
 
 .post-card {
@@ -279,4 +312,100 @@ footer a {
         flex-direction: column;
         text-align: center;
     }
+}
+
+.hero {
+    border-radius: 20px;
+    margin: 20px 0;
+    overflow: hidden;
+    position: relative;
+    min-height: 400px; /* Adjust hero height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-slider {
+    width: 100%;
+    max-width: 1200px;
+    height: 400px !important;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+/* 3D Effects Support */
+.hero-slider.slider-cube,
+.hero-slider.slider-flip {
+    perspective: 1200px;
+}
+
+.hero-slider.slider-cube .swiper-wrapper,
+.hero-slider.slider-flip .swiper-wrapper {
+    transform-style: preserve-3d;
+}
+
+.hero-slider.slider-cube .swiper-slide,
+.hero-slider.slider-flip .swiper-slide {
+    backface-visibility: hidden;
+}
+.hero-slider .swiper-wrapper {
+    height: 100% !important;
+}
+
+.hero-slider .swiper-slide {
+    height: 400px !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* Swiper Navigation */
+.hero-slider .swiper-button-next,
+.hero-slider .swiper-button-prev {
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-top: -25px;
+}
+
+.hero-slider .swiper-button-next:hover,
+.hero-slider .swiper-button-prev:hover {
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-slider .swiper-button-next::after,
+.hero-slider .swiper-button-prev::after {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Swiper Pagination */
+.hero-slider .swiper-pagination {
+    bottom: 20px;
+}
+
+.hero-slider .swiper-pagination-bullet {
+    background: rgba(255, 255, 255, 0.7);
+    opacity: 1;
+}
+
+.hero-slider .swiper-pagination-bullet-active {
+    background: white;
+}
+
+.hero-slider .swiper-pagination-bullet-active {
+    background: white;
+}
+
+/* If hero is missing, the bottom margin of the header container will pull content up */
+.site-main {
+    display: flex;
+    flex-direction: column;
 }

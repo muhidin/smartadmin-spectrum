@@ -25,64 +25,64 @@
 
 <header id="masthead" class="site-header">
     <div class="container header-flex">
-        <?php 
-            // Fetch Customizer settings
+        <?php
+            // Get settings from Customizer
             $display_type = get_theme_mod( 'header_display_type', 'both' );
             $layout_pos   = get_theme_mod( 'header_layout_position', 'brand-stacked' );
-            
-            // Determine default logo based on position
+
+            // Determine display variables
+            $show_logo = ( 'both' === $display_type || 'logo' === $display_type );
+            $show_text = ( 'both' === $display_type || 'text' === $display_type );
+
+            // Default logo only appears if "logo display is allowed" AND "user hasn't uploaded logo"
             $default_logo_file = ( 'brand-inline' === $layout_pos ) ? 'logo2.png' : 'logo.png';
             $default_logo_url  = get_template_directory_uri() . '/images/' . $default_logo_file;
+
+            // Prioritize user input for title and tagline.
+            $site_title   = get_bloginfo( 'name', 'display' );
+            $site_tagline = get_bloginfo( 'description', 'display' );
+
+            if ( ! $site_title && ! $site_tagline ) {
+                $site_title   = esc_html__( 'SmartAdmin Spectrum', 'smartadmin-spectrum' );
+                $site_tagline = esc_html__( 'Digital Office Specialist', 'smartadmin-spectrum' );
+            }
         ?>
 
         <div class="brand-wrapper <?php echo esc_attr( $layout_pos ); ?>">
             
-            <?php if ( 'both' === $display_type || 'logo' === $display_type ) : ?>
+            <?php if ( $show_logo ) : ?>
                 <div class="site-logo">
                     <?php 
                     if ( has_custom_logo() ) {
                         the_custom_logo();
                     } else {
+                        // Display default RGI logo only if logo mode is active
                         echo '<a href="' . esc_url( home_url( '/' ) ) . '" rel="home">';
-                        echo '<img src="' . esc_url( $default_logo_url ) . '" alt="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '">';
+                        echo '<img src="' . esc_url( $default_logo_url ) . '" alt="' . esc_attr( $site_title ) . '">';
                         echo '</a>';
                     }
                     ?>
                 </div>
             <?php endif; ?>
 
-            <?php if ( 'both' === $display_type || 'text' === $display_type ) : ?>
+            <?php if ( $show_text ) : ?>
                 <div class="brand-text">
                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
                         <span class="text-blue-red-dynamic">
-                            <?php 
-                            $site_title = get_bloginfo( 'name', 'display' );
-                            if ( ! empty( $site_title ) ) :
-                                echo esc_html( $site_title );
-                            else :
-                                echo esc_html__( 'SmartAdmin Spectrum', 'smartadmin-spectrum' );
-                            endif; 
-                            ?>
+                            <?php echo esc_html( $site_title ); ?>
                         </span>
                     </a>
                     
-                    <?php
-                    $description = get_bloginfo( 'description', 'display' );
-                    if ( $description || is_customize_preview() ) : ?>
+                    <?php if ( $site_tagline ) : ?>
                         <div class="site-tagline">
-                            <?php 
-                            if ( ! empty( $description ) ) :
-                                echo esc_html( $description );
-                            else :
-                                echo esc_html__( 'Digital Office Specialist', 'smartadmin-spectrum' );
-                            endif;
-                            ?>
+                            <?php echo esc_html( $site_tagline ); ?>
                         </div>
                     <?php endif; ?>
                 </div>
             <?php endif; ?>
 
         </div>
+
         <nav id="site-navigation" class="main-navigation">
             <?php
             wp_nav_menu( array(
