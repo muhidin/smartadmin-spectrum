@@ -20,20 +20,22 @@
 
     <footer id="colophon" class="site-footer">
         <div class="container">
-            <p>
-                &copy; <?php echo date('Y'); ?> 
-                <strong><?php echo esc_html__( 'Muhidin Saimin', 'smartadmin-spectrum' ); ?></strong>. 
-                <?php echo esc_html__( 'All Rights Reserved.', 'smartadmin-spectrum' ); ?>
-            </p>
-            <p>
-                <small>
-                    <?php echo esc_html__( 'Digital Office Specialist', 'smartadmin-spectrum' ); ?> | 
-                    <a href="<?php echo esc_url( 'https://muhidin.web.id' ); ?>" target="_blank" rel="noopener">
-                        <?php echo esc_html__( 'muhidin.web.id', 'smartadmin-spectrum' ); ?>
+            <div class="site-info">
+                <p>
+                    &copy; <?php echo date('Y'); ?> 
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                        <?php bloginfo( 'name' ); ?>
                     </a>
-                </small>
-            </p>
-        </div></footer><?php wp_footer(); ?>
+                    <span class="sep"> | </span>
+                    <?php
+                    /* translators: %s: WordPress */
+                    printf( esc_html__( 'Proudly powered by %s', 'smartadmin-spectrum' ), 'WordPress' );
+                    ?>
+                </p>
+            </div><!-- .site-info -->
+        </div>
+    </footer>
+    <?php wp_footer(); ?>
 
 </body>
 </html>

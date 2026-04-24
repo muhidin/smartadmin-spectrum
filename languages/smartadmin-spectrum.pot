@@ -1,0 +1,173 @@
+# Copyright (C) 2026 Muhidin Saimin
+# This file is distributed under the same license as the SmartAdmin Spectrum package.
+msgid ""
+msgstr ""
+"Project-Id-Version: SmartAdmin Spectrum 1.1.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/smartadmin-spectrum\n"
+"POT-Creation-Date: 2026-04-24T12:00:00+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2026-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: functions.php:364
+msgid "Tema WordPress yang ringan dan profesional dirancang khusus untuk portal pendidikan dan kelas Digital Office Specialist di Rumah Gemilang Indonesia. Dikembangkan oleh Muhidin Saimin, tema ini fokus pada pengalaman belajar yang bersih dengan sistem header yang dinamis. Pembaruan 1.1.1 memperkenalkan Hero Slider yang ditingkatkan dengan 5 slot gambar dan 4 efek transisi, Header Background Image dengan overlay kustom, sistem Widget dengan tampilan footer-only, dan opsi Full Width Container untuk layout lebar penuh. Tema ini juga mendukung berbagai efek 3D untuk slider dan desain yang responsif untuk semua ukuran layar."
+msgstr ""
+
+#: functions.php:366
+msgid "A lightweight and professional WordPress theme specially designed for educational portals and Digital Office Specialist classes at Rumah Gemilang Indonesia. Developed by Muhidin Saimin, this theme focuses on a clean learning experience with a dynamic header system. The 1.1.1 update introduces an enhanced Hero Slider with 5 image slots and 4 transition effects, Header Background Image with customizable overlay, Widget system with footer-only display, and Full Width Container option for complete screen-width layouts. The theme also supports various 3D effects for sliders and responsive design for all screen sizes."
+msgstr ""
+
+#: functions.php:85
+msgid "Sidebar Widget Area"
+msgstr "Area Widget Sidebar"
+
+#: functions.php:87
+msgid "Widgets will appear in the footer. Add widgets via Appearance → Widgets"
+msgstr "Widget akan muncul di footer. Tambahkan widget melalui Appearance → Widgets"
+
+#: functions.php:90
+msgid "Spectrum Primary"
+msgstr "Primer Spectrum"
+
+#: functions.php:323
+msgid "Spectrum Highlight"
+msgstr "Sorotan Spectrum"
+
+#: functions.php:344
+msgid "Spectrum Dotted"
+msgstr "Titik-titik Spectrum"
+
+#: functions.php:108
+msgid "Header Settings"
+msgstr "Pengaturan Header"
+
+#: functions.php:113
+msgid "Header Display Type"
+msgstr "Tipe Tampilan Header"
+
+#: functions.php:119
+msgid "Logo and Text"
+msgstr "Logo dan Teks"
+
+#: functions.php:120
+msgid "Logo Only"
+msgstr "Logo Saja"
+
+#: functions.php:121
+msgid "Text Only"
+msgstr "Teks Saja"
+
+#: functions.php:125
+msgid "Logo & Text Position"
+msgstr "Posisi Logo & Teks"
+
+#: functions.php:130
+msgid "Stacked (Top/Bottom)"
+msgstr "Bertumpuk (Atas/Bawah)"
+
+#: functions.php:131
+msgid "Inline (Side by Side)"
+msgstr "Sejajar (Samping-menyamping)"
+
+#: functions.php:141
+msgid "Header Background Image"
+msgstr "Gambar Background Header"
+
+#: functions.php:152
+msgid "Hero Slider Settings"
+msgstr "Pengaturan Hero Slider"
+
+#: functions.php:157
+msgid "Enable Hero Slider"
+msgstr "Aktifkan Hero Slider"
+
+#: functions.php:169
+msgid "Slider Style"
+msgstr "Gaya Slider"
+
+#: functions.php:174
+msgid "Fade Transition"
+msgstr "Transisi Fade"
+
+#: functions.php:175
+msgid "Slide Transition"
+msgstr "Transisi Slide"
+
+#: functions.php:176
+msgid "Cube Effect"
+msgstr "Efek Kubus"
+
+#: functions.php:177
+msgid "Flip Effect"
+msgstr "Efek Balik"
+
+#: functions.php:187
+msgid "Grid Columns"
+msgstr "Kolom Grid"
+
+#: functions.php:192
+msgid "1 Column"
+msgstr "1 Kolom"
+
+#: functions.php:193
+msgid "2 Columns"
+msgstr "2 Kolom"
+
+#: functions.php:194
+msgid "3 Columns"
+msgstr "3 Kolom"
+
+#: functions.php:203
+msgid "Layout Container"
+msgstr "Kontainer Layout"
+
+#: functions.php:209
+msgid "Boxed Container"
+msgstr "Kontainer Berbingkai"
+
+#: functions.php:210
+msgid "Full Width Container"
+msgstr "Kontainer Lebar Penuh"
+
+#: functions.php:225
+msgid "Slide Image %d"
+msgstr "Gambar Slide %d"
+
+#: index.php:76
+msgid "Baca Selengkapnya &raquo;"
+msgstr ""
+
+#: index.php:87
+msgid "Sorry, no content is available at this time."
+msgstr "Maaf, tidak ada konten yang tersedia saat ini."
+
+#: header.php:60
+msgid "Skip to content"
+msgstr "Lanjut ke konten"
+
+#: header.php:61
+msgid "Primary Menu"
+msgstr "Menu Utama"
+
+#: header.php:26
+msgid "Skip to content"
+msgstr ""
+
+#: 404.php:11
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:17
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr ""
+
+#: 404.php:32
+msgid "Most Used Categories"
+msgstr ""
+
+#: 404.php:36
+msgid "Try looking in the monthly archives. %1$s"
+msgstr ""

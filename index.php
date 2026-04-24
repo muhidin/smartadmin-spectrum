@@ -8,7 +8,7 @@
 
 get_header(); ?>
 
-<main id="primary" class="site-main <?php echo esc_attr( get_theme_mod( 'sas_layout_container', 'container' ) ); ?>">
+<main id="primary-content" class="site-main <?php echo esc_attr( get_theme_mod( 'sas_layout_container', 'container' ) ); ?>">
     <?php
     // Slider - Check if enabled
     $slider_enabled = get_theme_mod( 'sas_hero_slider_enabled', '1' ); // Default as string '1'
@@ -22,7 +22,7 @@ get_header(); ?>
     if ( $slider_enabled === '1' || $slider_enabled === true ) {
         $template_dir = get_template_directory_uri();
         for ( $i = 1; $i <= 5; $i++ ) {
-            $img = get_theme_mod( 'hero_slide_' . $i );
+            $img = get_theme_mod( 'sas_hero_slide_' . $i );
             // Use default if empty
             if ( empty( $img ) ) {
                 $img = $template_dir . '/images/slider' . $i . '.jpg';

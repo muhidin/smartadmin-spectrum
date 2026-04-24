@@ -22,6 +22,9 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+<a class="skip-link screen-reader-text" href="#primary-content">
+    <?php esc_html_e( 'Skip to content', 'smartadmin-spectrum' ); ?>
+</a>
 
 <?php
     // Get header background image
@@ -35,8 +38,8 @@
     <div class="<?php echo esc_attr( get_theme_mod( 'sas_layout_container', 'container' ) ); ?> header-flex">
         <?php
             // Get settings from Customizer
-            $display_type = get_theme_mod( 'header_display_type', 'both' );
-            $layout_pos   = get_theme_mod( 'header_layout_position', 'brand-stacked' );
+            $display_type = get_theme_mod( 'sas_header_display_type', 'both' );
+            $layout_pos   = get_theme_mod( 'sas_header_layout_position', 'brand-stacked' );
 
             // Determine display variables
             $show_logo = ( 'both' === $display_type || 'logo' === $display_type );
@@ -99,7 +102,7 @@
                 'container'      => false,
                 'menu_class'     => 'main-nav-list',
                 'depth'          => 2,
-                'fallback_cb'    => false,
+                'fallback_cb'    => 'smartadmin_spectrum_fallback_menu',
             ) );
             ?>
         </nav>

@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-<main class="container site-main single-post-container">
+<main id="primary-content" class="<?php echo esc_attr( get_theme_mod( 'sas_layout_container', 'container' ) ); ?> site-main single-post-container">
     <?php while ( have_posts() ) : the_post(); ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             <header class="entry-header">
@@ -19,8 +19,8 @@ get_header(); ?>
             </header>
 
             <?php if ( has_post_thumbnail() ) : ?>
-                <div class="post-thumbnail" style="margin-bottom: 30px;">
-                    <?php the_post_thumbnail( 'large', array( 'style' => 'width:100%; height:auto; border-radius:8px;' ) ); ?>
+                <div class="post-thumbnail-float">
+                    <?php the_post_thumbnail( 'medium', array( 'class' => 'featured-image-float', 'style' => 'float: left; margin-right: 20px; margin-bottom: 10px; max-width: 300px; height: auto; border-radius: 8px;' ) ); ?>
                 </div>
             <?php endif; ?>
 
