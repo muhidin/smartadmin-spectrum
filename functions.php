@@ -33,6 +33,17 @@ function sas_setup() {
         'primary' => esc_html__( 'Primary Menu', 'smartadmin-spectrum' ),
     ) );
 
+    // Register widget areas.
+    register_sidebar( array(
+        'name'          => esc_html__( 'Sidebar Widget Area', 'smartadmin-spectrum' ),
+        'id'            => 'primary-sidebar',
+        'description'   => esc_html__( 'Widgets will appear in the footer. Add widgets via Appearance → Widgets', 'smartadmin-spectrum' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ) );
+
     // Switch default core markup to output valid HTML5.
     add_theme_support( 'html5', array(
         'search-form',
@@ -49,7 +60,6 @@ function sas_setup() {
     add_theme_support( 'align-wide' );
     add_theme_support( 'responsive-embeds' );
     add_theme_support( 'custom-background' );
-    add_theme_support( 'custom-header' );
     add_editor_style( 'style.css' );
 }
 endif;
@@ -121,6 +131,17 @@ function sas_customize_register( $wp_customize ) {
             'brand-inline'  => esc_html__( 'Inline (Side by Side)', 'smartadmin-spectrum' ),
         ),
     ) );
+
+    // 4. Setting: Header Background Image
+    $wp_customize->add_setting( 'sas_header_background_image', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'sas_header_background_image_control', array(
+        'label'    => esc_html__( 'Header Background Image', 'smartadmin-spectrum' ),
+        'section'  => 'sas_header_section',
+        'settings' => 'sas_header_background_image',
+    ) ) );
 
     $wp_customize->add_section( 'sas_slider_section', array(
         'title'    => esc_html__( 'Hero Slider Settings', 'smartadmin-spectrum' ),
@@ -229,13 +250,17 @@ function sas_sanitize_layout_container( $input ) {
     return ( in_array( $input, $valid ) ? $input : 'container' );
 }
 
+function sas_sanitize_layout_position( $input ) {
+    $valid = array( 'brand-stacked', 'brand-inline' );
+    return ( in_array( $input, $valid ) ? $input : 'brand-stacked' );
+}
 
 function sas_register_my_patterns() {
     register_block_pattern(
         'smartadmin-spectrum/cta-pattern',
         array(
             'title'       => __( 'Spectrum Learning Call to Action', 'smartadmin-spectrum' ),
-            'description' => _x( 'Call to action section to start learning.', 'smartadmin-spectrum' ),
+            'description' => __( 'Call to action section to start learning.', 'smartadmin-spectrum' ),
             'content'     => '<div class="wp-block-group has-white-color has-primary-background-color has-text-color has-background has-link-color">
                               <h2 class="wp-block-heading has-text-align-center has-white-color">Siap Memulai Karir Digital?</h2><div class="wp-block-buttons"><div class="wp-block-button"><a class="wp-block-button__link has-black-color has-white-background-color has-text-color has-background wp-element-button">Daftar Sekarang</a></div></div></div>',
             'categories'  => array( 'buttons' ),

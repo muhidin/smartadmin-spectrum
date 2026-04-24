@@ -23,8 +23,16 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<header id="masthead" class="site-header">
-    <div class="container header-flex">
+<?php
+    // Get header background image
+    $header_bg_image = get_theme_mod( 'sas_header_background_image', '' );
+    $header_style = '';
+    if ( $header_bg_image ) {
+        $header_style = 'style="background-image: url(\'' . esc_url( $header_bg_image ) . '\'); background-size: cover; background-position: center; background-repeat: no-repeat;"';
+    }
+?>
+<header id="masthead" class="site-header" <?php echo $header_style; ?>>
+    <div class="<?php echo esc_attr( get_theme_mod( 'sas_layout_container', 'container' ) ); ?> header-flex">
         <?php
             // Get settings from Customizer
             $display_type = get_theme_mod( 'header_display_type', 'both' );

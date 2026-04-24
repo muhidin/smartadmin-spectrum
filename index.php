@@ -87,6 +87,7 @@ get_header(); ?>
             <p><?php esc_html_e('Sorry, no content is available at this time.', 'smartadmin-spectrum'); ?></p>
         <?php endif; ?>
     </div>
+
 </main>
 
 <?php get_footer(); ?>

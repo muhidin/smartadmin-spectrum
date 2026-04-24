@@ -9,6 +9,15 @@
 
 ?>
 
+    <?php
+    // Display widgets if available
+    if ( is_active_sidebar( 'primary-sidebar' ) ) {
+        echo '<aside class="site-widgets">';
+        dynamic_sidebar( 'primary-sidebar' );
+        echo '</aside>';
+    }
+    ?>
+
     <footer id="colophon" class="site-footer">
         <div class="container">
             <p>

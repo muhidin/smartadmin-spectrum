@@ -51,11 +51,14 @@ document.addEventListener("DOMContentLoaded", function() {
         } else if (effect === 'cube') {
             swiperConfig.effect = 'cube';
             swiperConfig.cubeEffect = {
-                slideShadows: true,
-                shadow: true,
-                shadowOffset: 20,
-                shadowScale: 0.94
+                slideShadows: false,
+                shadow: false,
+                shadowOffset: 0,
+                shadowScale: 1
             };
+            swiperConfig.speed = 800;
+            swiperConfig.grabCursor = false;
+            swiperConfig.allowTouchMove = true;
         } else if (effect === 'flip') {
             swiperConfig.effect = 'flip';
             swiperConfig.flipEffect = {
