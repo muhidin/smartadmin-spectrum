@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the SmartAdmin Spectrum package.
 msgid ""
 msgstr ""
-"Project-Id-Version: SmartAdmin Spectrum 1.1.1\n"
+"Project-Id-Version: SmartAdmin Spectrum 1.1.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/smartadmin-spectrum\n"
-"POT-Creation-Date: 2026-04-24T12:00:00+00:00\n"
+"POT-Creation-Date: 2026-04-25T12:00:00+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,129 +12,193 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: functions.php:364
+#: functions.php:359
 msgid "Tema WordPress yang ringan dan profesional dirancang khusus untuk portal pendidikan dan kelas Digital Office Specialist di Rumah Gemilang Indonesia. Dikembangkan oleh Muhidin Saimin, tema ini fokus pada pengalaman belajar yang bersih dengan sistem header yang dinamis. Pembaruan 1.1.1 memperkenalkan Hero Slider yang ditingkatkan dengan 5 slot gambar dan 4 efek transisi, Header Background Image dengan overlay kustom, sistem Widget dengan tampilan footer-only, dan opsi Full Width Container untuk layout lebar penuh. Tema ini juga mendukung berbagai efek 3D untuk slider dan desain yang responsif untuk semua ukuran layar."
 msgstr ""
 
-#: functions.php:366
+#: functions.php:361
 msgid "A lightweight and professional WordPress theme specially designed for educational portals and Digital Office Specialist classes at Rumah Gemilang Indonesia. Developed by Muhidin Saimin, this theme focuses on a clean learning experience with a dynamic header system. The 1.1.1 update introduces an enhanced Hero Slider with 5 image slots and 4 transition effects, Header Background Image with customizable overlay, Widget system with footer-only display, and Full Width Container option for complete screen-width layouts. The theme also supports various 3D effects for sliders and responsive design for all screen sizes."
 msgstr ""
 
-#: functions.php:85
+#: functions.php:98
 msgid "Sidebar Widget Area"
-msgstr "Area Widget Sidebar"
+msgstr ""
 
-#: functions.php:87
+#: functions.php:100
 msgid "Widgets will appear in the footer. Add widgets via Appearance → Widgets"
-msgstr "Widget akan muncul di footer. Tambahkan widget melalui Appearance → Widgets"
+msgstr ""
 
-#: functions.php:90
+#: functions.php:295
 msgid "Spectrum Primary"
-msgstr "Primer Spectrum"
+msgstr ""
 
-#: functions.php:323
+#: functions.php:318
 msgid "Spectrum Highlight"
-msgstr "Sorotan Spectrum"
+msgstr ""
 
-#: functions.php:344
+#: functions.php:339
 msgid "Spectrum Dotted"
-msgstr "Titik-titik Spectrum"
+msgstr ""
 
-#: functions.php:108
+#: functions.php:117
 msgid "Header Settings"
-msgstr "Pengaturan Header"
+msgstr ""
 
-#: functions.php:113
+#: functions.php:122
 msgid "Header Display Type"
-msgstr "Tipe Tampilan Header"
+msgstr ""
 
-#: functions.php:119
+#: functions.php:128
 msgid "Logo and Text"
-msgstr "Logo dan Teks"
+msgstr ""
 
-#: functions.php:120
+#: functions.php:129
 msgid "Logo Only"
-msgstr "Logo Saja"
-
-#: functions.php:121
-msgid "Text Only"
-msgstr "Teks Saja"
-
-#: functions.php:125
-msgid "Logo & Text Position"
-msgstr "Posisi Logo & Teks"
+msgstr ""
 
 #: functions.php:130
+msgid "Text Only"
+msgstr ""
+
+#: functions.php:134
+msgid "Logo & Text Position"
+msgstr ""
+
+#: functions.php:139
 msgid "Stacked (Top/Bottom)"
-msgstr "Bertumpuk (Atas/Bawah)"
+msgstr ""
 
-#: functions.php:131
+#: functions.php:140
 msgid "Inline (Side by Side)"
-msgstr "Sejajar (Samping-menyamping)"
+msgstr ""
 
-#: functions.php:141
+#: functions.php:150
 msgid "Header Background Image"
-msgstr "Gambar Background Header"
+msgstr ""
 
-#: functions.php:152
+#: functions.php:161
 msgid "Hero Slider Settings"
-msgstr "Pengaturan Hero Slider"
+msgstr ""
 
-#: functions.php:157
+#: functions.php:166
 msgid "Enable Hero Slider"
-msgstr "Aktifkan Hero Slider"
+msgstr ""
 
-#: functions.php:169
+#: functions.php:178
 msgid "Slider Style"
-msgstr "Gaya Slider"
+msgstr ""
 
-#: functions.php:174
+#: functions.php:183
 msgid "Fade Transition"
-msgstr "Transisi Fade"
+msgstr ""
 
-#: functions.php:175
+#: functions.php:184
 msgid "Slide Transition"
-msgstr "Transisi Slide"
+msgstr ""
 
-#: functions.php:176
+#: functions.php:185
 msgid "Cube Effect"
-msgstr "Efek Kubus"
+msgstr ""
 
-#: functions.php:177
+#: functions.php:186
 msgid "Flip Effect"
-msgstr "Efek Balik"
+msgstr ""
 
-#: functions.php:187
+#: functions.php:196
 msgid "Grid Columns"
-msgstr "Kolom Grid"
+msgstr ""
 
-#: functions.php:192
+#: functions.php:201
 msgid "1 Column"
-msgstr "1 Kolom"
+msgstr ""
 
-#: functions.php:193
+#: functions.php:202
 msgid "2 Columns"
-msgstr "2 Kolom"
-
-#: functions.php:194
-msgid "3 Columns"
-msgstr "3 Kolom"
+msgstr ""
 
 #: functions.php:203
+msgid "3 Columns"
+msgstr ""
+
+#: functions.php:212
 msgid "Layout Container"
-msgstr "Kontainer Layout"
+msgstr ""
 
-#: functions.php:209
+#: functions.php:218
 msgid "Boxed Container"
-msgstr "Kontainer Berbingkai"
+msgstr ""
 
-#: functions.php:210
+#: functions.php:219
 msgid "Full Width Container"
-msgstr "Kontainer Lebar Penuh"
+msgstr ""
 
-#: functions.php:225
+#: functions.php:234
 msgid "Slide Image %d"
-msgstr "Gambar Slide %d"
+msgstr ""
+
+#: functions.php:403
+msgid "Footer Settings"
+msgstr ""
+
+#: functions.php:408
+msgid "Footer Display Mode"
+msgstr ""
+
+#: functions.php:414
+msgid "Default (Site Name + WordPress)"
+msgstr ""
+
+#: functions.php:415
+msgid "Site Name Only"
+msgstr ""
+
+#: functions.php:416
+msgid "Custom Text"
+msgstr ""
+
+#: functions.php:417
+msgid "Hidden (No Footer)"
+msgstr ""
+
+#: functions.php:427
+msgid "Custom Footer Text"
+msgstr ""
+
+#: functions.php:428
+msgid "HTML allowed. Use {year} for current year, {site} for site name."
+msgstr ""
+
+#: functions.php:443
+msgid "Footer Layout"
+msgstr ""
+
+#: functions.php:449
+msgid "Left Aligned"
+msgstr ""
+
+#: functions.php:450
+msgid "Center Aligned"
+msgstr ""
+
+#: functions.php:451
+msgid "Right Aligned"
+msgstr ""
+
+#: functions.php:460
+msgid "Show \"Powered by WordPress\""
+msgstr ""
+
+#: functions.php:461
+msgid "Only applies to Default display mode."
+msgstr ""
+
+#: functions.php:496
+msgid "Add a menu"
+msgstr ""
+
+#: functions.php:496
+msgid "Home"
+msgstr ""
 
 #: index.php:76
 msgid "Baca Selengkapnya &raquo;"
@@ -142,18 +206,22 @@ msgstr ""
 
 #: index.php:87
 msgid "Sorry, no content is available at this time."
-msgstr "Maaf, tidak ada konten yang tersedia saat ini."
+msgstr ""
 
-#: header.php:60
+#: header.php:25
 msgid "Skip to content"
-msgstr "Lanjut ke konten"
+msgstr ""
 
-#: header.php:61
+#: header.php:57
+msgid "SmartAdmin Spectrum"
+msgstr ""
+
+#: header.php:58
+msgid "Digital Office Specialist"
+msgstr ""
+
+#: header.php:99
 msgid "Primary Menu"
-msgstr "Menu Utama"
-
-#: header.php:26
-msgid "Skip to content"
 msgstr ""
 
 #: 404.php:11
@@ -164,10 +232,26 @@ msgstr ""
 msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
 msgstr ""
 
+#: 404.php:21
+msgid "Search"
+msgstr ""
+
 #: 404.php:32
 msgid "Most Used Categories"
 msgstr ""
 
 #: 404.php:36
 msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#: 404.php:38
+msgid "Monthly Archives"
+msgstr ""
+
+#: 404.php:43
+msgid "Archives"
+msgstr ""
+
+#: footer.php:63
+msgid "Proudly powered by %s"
 msgstr ""

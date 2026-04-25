@@ -28,18 +28,18 @@
 
 <?php
     // Get header background image
-    $header_bg_image = get_theme_mod( 'sas_header_background_image', '' );
+    $header_bg_image = get_theme_mod( 'smartadmin_spectrum_header_background_image', '' );
     $header_style = '';
     if ( $header_bg_image ) {
         $header_style = 'style="background-image: url(\'' . esc_url( $header_bg_image ) . '\'); background-size: cover; background-position: center; background-repeat: no-repeat;"';
     }
 ?>
 <header id="masthead" class="site-header" <?php echo $header_style; ?>>
-    <div class="<?php echo esc_attr( get_theme_mod( 'sas_layout_container', 'container' ) ); ?> header-flex">
+    <div class="<?php echo esc_attr( get_theme_mod( 'smartadmin_spectrum_layout_container', 'container' ) ); ?> header-flex">
         <?php
             // Get settings from Customizer
-            $display_type = get_theme_mod( 'sas_header_display_type', 'both' );
-            $layout_pos   = get_theme_mod( 'sas_header_layout_position', 'brand-stacked' );
+            $display_type = get_theme_mod( 'smartadmin_spectrum_header_display_type', 'both' );
+            $layout_pos   = get_theme_mod( 'smartadmin_spectrum_header_layout_position', 'brand-stacked' );
 
             // Determine display variables
             $show_logo = ( 'both' === $display_type || 'logo' === $display_type );

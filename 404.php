@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-<main id="primary-content" class="<?php echo esc_attr( get_theme_mod( 'sas_layout_container', 'container' ) ); ?> site-main">
+<main id="primary-content" class="<?php echo esc_attr( get_theme_mod( 'smartadmin_spectrum_layout_container', 'container' ) ); ?> site-main">
     <div class="error-404 not-found">
         <header class="page-header">
             <h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'smartadmin-spectrum' ); ?></h1>

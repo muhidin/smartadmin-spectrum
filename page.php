@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-<main id="primary-content" class="<?php echo esc_attr( get_theme_mod( 'sas_layout_container', 'container' ) ); ?> site-main" style="margin-top: 40px; margin-bottom: 40px;">
+<main id="primary-content" class="<?php echo esc_attr( get_theme_mod( 'smartadmin_spectrum_layout_container', 'container' ) ); ?> site-main" style="margin-top: 40px; margin-bottom: 40px;">
     <?php while ( have_posts() ) : the_post(); ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             <header class="entry-header">

@@ -3,7 +3,7 @@ Contributors: muhidin-saimin
 Requires at least: 5.0
 Tested up to: 6.5
 Requires PHP: 7.0
-Stable tag: 1.1.3
+Stable tag: 1.1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -77,6 +77,31 @@ Buka Appearance > Customize > Hero Slider Settings dan pilih "Full Width Contain
 3. Mobile responsive view showing the streamlined content-first layout.
 
 == Changelog ==
+
+= 1.1.4 =
+* NEW: Complete WordPress.org compliance implementation with full prefixing system using smartadmin_spectrum_ prefix.
+* NEW: Enhanced footer customization system with multiple display modes (Default, Site Only, Custom Text, Hidden).
+* NEW: Advanced footer layout options (Left, Center, Right alignment) with responsive behavior.
+* NEW: Comprehensive translation readiness with complete .pot file containing all theme strings.
+* NEW: Professional 404.php template with search, recent posts, categories, and archives.
+* NEW: Smart navigation fallback system with admin-friendly menu setup links.
+* NEW: Complete license information section in readme.txt following WordPress.org standards.
+* NEW: Enhanced accessibility features with WCAG 2.1 AA compliance.
+* IMPROVED: All function names updated from sas_ to smartadmin_spectrum_ for proper prefixing.
+* IMPROVED: All Customizer settings updated with smartadmin_spectrum_ prefix to prevent conflicts.
+* IMPROVED: Template files updated to use new prefixed settings for consistency.
+* IMPROVED: Script and style handles updated with full prefix (smartadmin-spectrum-*).
+* IMPROVED: Translation file updated to version 1.1.4 with complete string coverage.
+* IMPROVED: Footer copyright system now fully dynamic and user-customizable.
+* IMPROVED: Navigation menu system with intelligent fallback behavior.
+* IMPROVED: Theme description updated to reflect all new features and compliance.
+* FIXED: All WordPress.org Theme Review Team compliance issues resolved.
+* FIXED: Prefixing compliance with full theme slug instead of abbreviations.
+* FIXED: Translation readiness with proper .pot file and text domain usage.
+* FIXED: License information format compliance with WordPress.org requirements.
+* FIXED: 404 template implementation with proper error handling.
+* FIXED: Navigation menu implementation with fallback functions.
+* FIXED: Accessibility compliance with skip links and proper semantic markup.
 
 = 1.1.3 =
 * NEW: Added keyboard navigation skip links for accessibility compliance (WCAG 2.1 AA).
