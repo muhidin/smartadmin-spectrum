@@ -81,10 +81,12 @@ Buka Appearance > Customize > Hero Slider Settings dan pilih "Full Width Contain
 = 1.1.5 =
 * FIXED: Added explicit copyright notice in style.css header to resolve WordPress Theme Check warning.
 * FIXED: Complete GPL v2 license text included for proper copyright compliance.
-* FIXED: Updated text domain from 'smartadmin-spectrum' to 'smartadmin_spectrum' to match theme slug for WordPress.org language pack compatibility.
-* FIXED: Updated all PHP files to use consistent text domain 'smartadmin_spectrum'.
+* FIXED: Updated text domain to 'smartadmin-spectrum' to match theme slug for WordPress.org language pack compatibility.
+* FIXED: Updated all PHP files to use consistent text domain 'smartadmin-spectrum'.
+* FIXED: Updated theme folder name to 'smartadmin-spectrum' to match text domain requirements.
 * IMPROVED: Theme now passes all WordPress Theme Check requirements for copyright notice.
 * IMPROVED: Theme now properly compatible with WordPress.org language packs and translation system.
+* IMPROVED: Complete WordPress.org compliance with proper folder/text domain structure.
 
 = 1.1.4 =
 * NEW: Complete WordPress.org compliance implementation with full prefixing system using smartadmin_spectrum_ prefix.

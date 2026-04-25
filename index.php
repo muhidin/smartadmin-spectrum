@@ -73,7 +73,7 @@ get_header(); ?>
 
                     <footer class="entry-footer">
                         <a href="<?php the_permalink(); ?>" class="read-more">
-                            <?php esc_html_e('Baca Selengkapnya &raquo;', 'smartadmin_spectrum'); ?>
+                            <?php esc_html_e('Baca Selengkapnya &raquo;', 'smartadmin-spectrum'); ?>
                         </a>
                     </footer>
                 </article>
@@ -84,7 +84,7 @@ get_header(); ?>
             </div>
 
         <?php else : ?>
-            <p><?php esc_html_e('Sorry, no content is available at this time.', 'smartadmin_spectrum'); ?></p>
+            <p><?php esc_html_e('Sorry, no content is available at this time.', 'smartadmin-spectrum'); ?></p>
         <?php endif; ?>
     </div>
 

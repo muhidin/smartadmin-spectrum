@@ -23,7 +23,7 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <a class="skip-link screen-reader-text" href="#primary-content">
-    <?php esc_html_e( 'Skip to content', 'smartadmin_spectrum' ); ?>
+    <?php esc_html_e( 'Skip to content', 'smartadmin-spectrum' ); ?>
 </a>
 
 <?php
@@ -54,8 +54,8 @@
             $site_tagline = get_bloginfo( 'description', 'display' );
 
             if ( ! $site_title && ! $site_tagline ) {
-                $site_title   = esc_html__( 'SmartAdmin Spectrum', 'smartadmin_spectrum' );
-                $site_tagline = esc_html__( 'Digital Office Specialist', 'smartadmin_spectrum' );
+                $site_title   = esc_html__( 'SmartAdmin Spectrum', 'smartadmin-spectrum' );
+                $site_tagline = esc_html__( 'Digital Office Specialist', 'smartadmin-spectrum' );
             }
         ?>
 
