@@ -1,9 +1,27 @@
 <?php
 /**
+ * Copyright 2026 Muhidin Saimin
+ *
+ * This file is part of SmartAdmin Spectrum.
+ *
+ * SmartAdmin Spectrum is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * SmartAdmin Spectrum is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with SmartAdmin Spectrum. If not, see <https://www.gnu.org/licenses/gpl-2.0.html/>.
+ *
  * SmartAdmin Spectrum functions and definitions
  *
- * @package SmartAdmin_Spectrum
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ * @package SmartAdmin_Spectrum
  */
 
 if ( ! function_exists( 'smartadmin_spectrum_setup' ) ) :

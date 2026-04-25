@@ -3,7 +3,7 @@ Contributors: muhidin-saimin
 Requires at least: 5.0
 Tested up to: 6.5
 Requires PHP: 7.0
-Stable tag: 1.1.8
+Stable tag: 1.1.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -77,6 +77,12 @@ Buka Appearance > Customize > Hero Slider Settings dan pilih "Full Width Contain
 3. Mobile responsive view showing the streamlined content-first layout.
 
 == Changelog ==
+
+= 1.1.9 =
+* FIXED: Added complete GPL license notice to functions.php following GNU.org standards.
+* FIXED: Added "This file is part of SmartAdmin Spectrum" statement for proper multi-file license compliance.
+* FIXED: Implemented full GPL license text in functions.php docblock for WordPress Theme Check detection.
+* IMPROVED: Theme now has complete GPL compliance in core functions file for maximum detection.
 
 = 1.1.8 =
 * FIXED: Added copyright notice to header.php file for WordPress Theme Check detection.
