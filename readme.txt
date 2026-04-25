@@ -3,7 +3,7 @@ Contributors: muhidin-saimin
 Requires at least: 5.0
 Tested up to: 6.5
 Requires PHP: 7.0
-Stable tag: 1.1.6
+Stable tag: 1.1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -78,15 +78,13 @@ Buka Appearance > Customize > Hero Slider Settings dan pilih "Full Width Contain
 
 == Changelog ==
 
-= 1.1.6 =
-* FIXED: Updated text domain from 'smartadmin-spectrum' to 'smartadmin_spectrum' to match theme slug for WordPress.org language pack compatibility.
-* FIXED: Updated all PHP files to use consistent text domain 'smartadmin_spectrum'.
-* IMPROVED: Theme now properly compatible with WordPress.org language packs and translation system.
-
 = 1.1.5 =
 * FIXED: Added explicit copyright notice in style.css header to resolve WordPress Theme Check warning.
 * FIXED: Complete GPL v2 license text included for proper copyright compliance.
+* FIXED: Updated text domain from 'smartadmin-spectrum' to 'smartadmin_spectrum' to match theme slug for WordPress.org language pack compatibility.
+* FIXED: Updated all PHP files to use consistent text domain 'smartadmin_spectrum'.
 * IMPROVED: Theme now passes all WordPress Theme Check requirements for copyright notice.
+* IMPROVED: Theme now properly compatible with WordPress.org language packs and translation system.
 
 = 1.1.4 =
 * NEW: Complete WordPress.org compliance implementation with full prefixing system using smartadmin_spectrum_ prefix.
