@@ -60,7 +60,7 @@
                         if ( $show_wp_attribution ) {
                             $footer_content .= ' <span class="sep"> | </span>';
                             /* translators: %s: WordPress */
-                            $footer_content .= sprintf( esc_html__( 'Proudly powered by %s', 'smartadmin-spectrum' ), 'WordPress' );
+                            $footer_content .= sprintf( esc_html__( 'Proudly powered by %s', 'smartadmin_spectrum' ), 'WordPress' );
                         }
                         break;
                 }

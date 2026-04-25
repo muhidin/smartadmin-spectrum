@@ -13,7 +13,7 @@ if ( post_password_required() ) { return; }
     <?php endif; ?>
 
     <?php if ( ! comments_open() ) : ?>
-        <p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'smartadmin-spectrum' ); ?></p>
+        <p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'smartadmin_spectrum' ); ?></p>
     <?php endif; ?>
 
     <?php comment_form(); ?>

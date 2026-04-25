@@ -30,7 +30,7 @@ function smartadmin_spectrum_setup() {
 
     // Register navigation menus.
     register_nav_menus( array(
-        'primary' => esc_html__( 'Primary Menu', 'smartadmin-spectrum' ),
+        'primary' => esc_html__( 'Primary Menu', 'smartadmin_spectrum' ),
     ) );
 
     // Switch default core markup to output valid HTML5.
@@ -97,9 +97,9 @@ add_action( 'wp_enqueue_scripts', 'smartadmin_spectrum_enqueue_assets' );
  */
 function smartadmin_spectrum_widgets_init() {
     register_sidebar( array(
-        'name'          => esc_html__( 'Sidebar Widget Area', 'smartadmin-spectrum' ),
+        'name'          => esc_html__( 'Sidebar Widget Area', 'smartadmin_spectrum' ),
         'id'            => 'primary-sidebar',
-        'description'   => esc_html__( 'Widgets will appear in the footer. Add widgets via Appearance → Widgets', 'smartadmin-spectrum' ),
+        'description'   => esc_html__( 'Widgets will appear in the footer. Add widgets via Appearance → Widgets', 'smartadmin_spectrum' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3 class="widget-title">',
@@ -115,7 +115,7 @@ function smartadmin_spectrum_customize_register( $wp_customize ) {
 
     // 1. Create Header Settings section.
     $wp_customize->add_section( 'smartadmin_spectrum_header_section', array(
-        'title'    => esc_html__( 'Header Settings', 'smartadmin-spectrum' ),
+        'title'    => esc_html__( 'Header Settings', 'smartadmin_spectrum' ),
         'priority' => 30,
     ) );
 
@@ -125,14 +125,14 @@ function smartadmin_spectrum_customize_register( $wp_customize ) {
         'sanitize_callback' => 'smartadmin_spectrum_sanitize_header_display',
     ) );
     $wp_customize->add_control( 'smartadmin_spectrum_header_display_type_control', array(
-        'label'    => esc_html__( 'Header Display Type', 'smartadmin-spectrum' ),
+        'label'    => esc_html__( 'Header Display Type', 'smartadmin_spectrum' ),
         'section'  => 'smartadmin_spectrum_header_section',
         'settings' => 'smartadmin_spectrum_header_display_type',
         'type'     => 'select',
         'choices'  => array(
-            'both' => esc_html__( 'Logo and Text', 'smartadmin-spectrum' ),
-            'logo' => esc_html__( 'Logo Only', 'smartadmin-spectrum' ),
-            'text' => esc_html__( 'Text Only', 'smartadmin-spectrum' ),
+            'both' => esc_html__( 'Logo and Text', 'smartadmin_spectrum' ),
+            'logo' => esc_html__( 'Logo Only', 'smartadmin_spectrum' ),
+            'text' => esc_html__( 'Text Only', 'smartadmin_spectrum' ),
         ),
     ) );
 
@@ -142,13 +142,13 @@ function smartadmin_spectrum_customize_register( $wp_customize ) {
         'sanitize_callback' => 'smartadmin_spectrum_sanitize_layout_position',
     ) );
     $wp_customize->add_control( 'smartadmin_spectrum_header_layout_position_control', array(
-        'label'    => esc_html__( 'Logo & Text Position', 'smartadmin-spectrum' ),
+        'label'    => esc_html__( 'Logo & Text Position', 'smartadmin_spectrum' ),
         'section'  => 'smartadmin_spectrum_header_section',
         'settings' => 'smartadmin_spectrum_header_layout_position',
         'type'     => 'radio',
         'choices'  => array(
-            'brand-stacked' => esc_html__( 'Stacked (Top/Bottom)', 'smartadmin-spectrum' ),
-            'brand-inline'  => esc_html__( 'Inline (Side by Side)', 'smartadmin-spectrum' ),
+            'brand-stacked' => esc_html__( 'Stacked (Top/Bottom)', 'smartadmin_spectrum' ),
+            'brand-inline'  => esc_html__( 'Inline (Side by Side)', 'smartadmin_spectrum' ),
         ),
     ) );
 
@@ -158,13 +158,13 @@ function smartadmin_spectrum_customize_register( $wp_customize ) {
         'sanitize_callback' => 'esc_url_raw',
     ) );
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'smartadmin_spectrum_header_background_image_control', array(
-        'label'    => esc_html__( 'Header Background Image', 'smartadmin-spectrum' ),
+        'label'    => esc_html__( 'Header Background Image', 'smartadmin_spectrum' ),
         'section'  => 'smartadmin_spectrum_header_section',
         'settings' => 'smartadmin_spectrum_header_background_image',
     ) ) );
 
     $wp_customize->add_section( 'smartadmin_spectrum_slider_section', array(
-        'title'    => esc_html__( 'Hero Slider Settings', 'smartadmin-spectrum' ),
+        'title'    => esc_html__( 'Hero Slider Settings', 'smartadmin_spectrum' ),
         'priority' => 31,
     ) );
 
@@ -174,7 +174,7 @@ function smartadmin_spectrum_customize_register( $wp_customize ) {
         'sanitize_callback' => 'smartadmin_spectrum_sanitize_checkbox',
     ) );
     $wp_customize->add_control( 'smartadmin_spectrum_hero_slider_enabled_control', array(
-        'label'    => esc_html__( 'Enable Hero Slider', 'smartadmin-spectrum' ),
+        'label'    => esc_html__( 'Enable Hero Slider', 'smartadmin_spectrum' ),
         'section'  => 'smartadmin_spectrum_slider_section',
         'settings' => 'smartadmin_spectrum_hero_slider_enabled',
         'type'     => 'checkbox',
@@ -186,15 +186,15 @@ function smartadmin_spectrum_customize_register( $wp_customize ) {
         'sanitize_callback' => 'smartadmin_spectrum_sanitize_slider_style',
     ) );
     $wp_customize->add_control( 'smartadmin_spectrum_slider_style_control', array(
-        'label'    => esc_html__( 'Slider Style', 'smartadmin-spectrum' ),
+        'label'    => esc_html__( 'Slider Style', 'smartadmin_spectrum' ),
         'section'  => 'smartadmin_spectrum_slider_section',
         'settings' => 'smartadmin_spectrum_slider_style',
         'type'     => 'select',
         'choices'  => array(
-            'fade'     => esc_html__( 'Fade Transition', 'smartadmin-spectrum' ),
-            'slide'    => esc_html__( 'Slide Transition', 'smartadmin-spectrum' ),
-            'cube'     => esc_html__( 'Cube Effect', 'smartadmin-spectrum' ),
-            'flip'     => esc_html__( 'Flip Effect', 'smartadmin-spectrum' ),
+            'fade'     => esc_html__( 'Fade Transition', 'smartadmin_spectrum' ),
+            'slide'    => esc_html__( 'Slide Transition', 'smartadmin_spectrum' ),
+            'cube'     => esc_html__( 'Cube Effect', 'smartadmin_spectrum' ),
+            'flip'     => esc_html__( 'Flip Effect', 'smartadmin_spectrum' ),
         ),
     ) );
 
@@ -204,14 +204,14 @@ function smartadmin_spectrum_customize_register( $wp_customize ) {
         'sanitize_callback' => 'smartadmin_spectrum_sanitize_grid_columns',
     ) );
     $wp_customize->add_control( 'smartadmin_spectrum_grid_columns_control', array(
-        'label'    => esc_html__( 'Grid Columns', 'smartadmin-spectrum' ),
+        'label'    => esc_html__( 'Grid Columns', 'smartadmin_spectrum' ),
         'section'  => 'smartadmin_spectrum_slider_section',
         'settings' => 'smartadmin_spectrum_grid_columns',
         'type'     => 'select',
         'choices'  => array(
-            '1' => esc_html__( '1 Column', 'smartadmin-spectrum' ),
-            '2' => esc_html__( '2 Columns', 'smartadmin-spectrum' ),
-            '3' => esc_html__( '3 Columns', 'smartadmin-spectrum' ),
+            '1' => esc_html__( '1 Column', 'smartadmin_spectrum' ),
+            '2' => esc_html__( '2 Columns', 'smartadmin_spectrum' ),
+            '3' => esc_html__( '3 Columns', 'smartadmin_spectrum' ),
         ),
     ) );
 
@@ -221,13 +221,13 @@ function smartadmin_spectrum_customize_register( $wp_customize ) {
         'sanitize_callback' => 'smartadmin_spectrum_sanitize_layout_container',
     ) );
     $wp_customize->add_control( 'smartadmin_spectrum_layout_container_control', array(
-        'label'    => esc_html__( 'Layout Container', 'smartadmin-spectrum' ),
+        'label'    => esc_html__( 'Layout Container', 'smartadmin_spectrum' ),
         'section'  => 'smartadmin_spectrum_slider_section',
         'settings' => 'smartadmin_spectrum_layout_container',
         'type'     => 'select',
         'choices'  => array(
-            'container'      => esc_html__( 'Boxed Container', 'smartadmin-spectrum' ),
-            'container-full' => esc_html__( 'Full Width Container', 'smartadmin-spectrum' ),
+            'container'      => esc_html__( 'Boxed Container', 'smartadmin_spectrum' ),
+            'container-full' => esc_html__( 'Full Width Container', 'smartadmin_spectrum' ),
         ),
     ) );
 
@@ -238,7 +238,7 @@ function smartadmin_spectrum_customize_register( $wp_customize ) {
         ) );
 
         $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'smartadmin_spectrum_hero_slide_' . $i . '_control', array(
-            'label'    => sprintf( esc_html__( 'Slide Image %d', 'smartadmin-spectrum' ), $i ),
+            'label'    => sprintf( esc_html__( 'Slide Image %d', 'smartadmin_spectrum' ), $i ),
             'section'  => 'smartadmin_spectrum_slider_section',
             'settings' => 'smartadmin_spectrum_hero_slide_' . $i,
         ) ) );
@@ -279,8 +279,8 @@ function smartadmin_spectrum_register_my_patterns() {
     register_block_pattern(
         'smartadmin-spectrum/cta-pattern',
         array(
-            'title'       => __( 'Spectrum Learning Call to Action', 'smartadmin-spectrum' ),
-            'description' => __( 'Call to action section to start learning.', 'smartadmin-spectrum' ),
+            'title'       => __( 'Spectrum Learning Call to Action', 'smartadmin_spectrum' ),
+            'description' => __( 'Call to action section to start learning.', 'smartadmin_spectrum' ),
             'content'     => '<div class="wp-block-group has-white-color has-primary-background-color has-text-color has-background has-link-color">
                               <h2 class="wp-block-heading has-text-align-center has-white-color">Siap Memulai Karir Digital?</h2><div class="wp-block-buttons"><div class="wp-block-button"><a class="wp-block-button__link has-black-color has-white-background-color has-text-color has-background wp-element-button">Daftar Sekarang</a></div></div></div>',
             'categories'  => array( 'buttons' ),
@@ -298,7 +298,7 @@ function smartadmin_spectrum_register_block_styles() {
         'core/button',
         array(
             'name'         => 'spectrum-primary',
-            'label'         => __( 'Spectrum Primary', 'smartadmin-spectrum' ),
+            'label'         => __( 'Spectrum Primary', 'smartadmin_spectrum' ),
             'inline_style' => '
                 .wp-block-button.is-style-spectrum-primary {
                     background-color: #0073aa;
@@ -320,7 +320,7 @@ function smartadmin_spectrum_register_block_styles() {
         'core/quote',
         array(
             'name'         => 'spectrum-highlight',
-            'label'         => __( 'Spectrum Highlight', 'smartadmin-spectrum' ),
+            'label'         => __( 'Spectrum Highlight', 'smartadmin_spectrum' ),
             'inline_style' => '
                 .wp-block-quote.is-style-spectrum-highlight {
                     border-left: 4px solid #0073aa;
@@ -341,7 +341,7 @@ function smartadmin_spectrum_register_block_styles() {
         'core/separator',
         array(
             'name'         => 'spectrum-dotted',
-            'label'         => __( 'Spectrum Dotted', 'smartadmin-spectrum' ),
+            'label'         => __( 'Spectrum Dotted', 'smartadmin_spectrum' ),
             'inline_style' => '
                 .wp-block-separator.is-style-spectrum-dotted {
                     border-bottom: 2px dotted #0073aa;
@@ -384,8 +384,8 @@ function smartadmin_spectrum_display_theme_description() {
         if ( in_array( $current_lang, array( 'id_ID', 'id', 'indonesian' ) ) ) {
             // Override theme description in admin for Indonesian
             add_filter( 'wp_prepare_themes_for_js', function( $themes ) {
-                if ( isset( $themes['smartadmin-spectrum'] ) ) {
-                    $themes['smartadmin-spectrum']['description'] = smartadmin_spectrum_get_theme_description();
+                if ( isset( $themes['smartadmin_spectrum'] ) ) {
+                    $themes['smartadmin_spectrum']['description'] = smartadmin_spectrum_get_theme_description();
                 }
                 return $themes;
             });
@@ -401,7 +401,7 @@ function smartadmin_spectrum_footer_customize_register( $wp_customize ) {
     
     // Create Footer Settings section
     $wp_customize->add_section( 'smartadmin_spectrum_footer_section', array(
-        'title'    => esc_html__( 'Footer Settings', 'smartadmin-spectrum' ),
+        'title'    => esc_html__( 'Footer Settings', 'smartadmin_spectrum' ),
         'priority' => 35,
     ) );
     
@@ -411,15 +411,15 @@ function smartadmin_spectrum_footer_customize_register( $wp_customize ) {
         'sanitize_callback' => 'smartadmin_spectrum_sanitize_footer_display_mode',
     ) );
     $wp_customize->add_control( 'smartadmin_spectrum_footer_display_mode_control', array(
-        'label'    => esc_html__( 'Footer Display Mode', 'smartadmin-spectrum' ),
+        'label'    => esc_html__( 'Footer Display Mode', 'smartadmin_spectrum' ),
         'section'  => 'smartadmin_spectrum_footer_section',
         'settings' => 'smartadmin_spectrum_footer_display_mode',
         'type'     => 'select',
         'choices'  => array(
-            'default'   => esc_html__( 'Default (Site Name + WordPress)', 'smartadmin-spectrum' ),
-            'site_only' => esc_html__( 'Site Name Only', 'smartadmin-spectrum' ),
-            'custom'    => esc_html__( 'Custom Text', 'smartadmin-spectrum' ),
-            'hidden'    => esc_html__( 'Hidden (No Footer)', 'smartadmin-spectrum' ),
+            'default'   => esc_html__( 'Default (Site Name + WordPress)', 'smartadmin_spectrum' ),
+            'site_only' => esc_html__( 'Site Name Only', 'smartadmin_spectrum' ),
+            'custom'    => esc_html__( 'Custom Text', 'smartadmin_spectrum' ),
+            'hidden'    => esc_html__( 'Hidden (No Footer)', 'smartadmin_spectrum' ),
         ),
     ) );
     
@@ -429,8 +429,8 @@ function smartadmin_spectrum_footer_customize_register( $wp_customize ) {
         'sanitize_callback' => 'wp_kses_post',
     ) );
     $wp_customize->add_control( 'smartadmin_spectrum_footer_custom_text_control', array(
-        'label'       => esc_html__( 'Custom Footer Text', 'smartadmin-spectrum' ),
-        'description' => esc_html__( 'HTML allowed. Use {year} for current year, {site} for site name.', 'smartadmin-spectrum' ),
+        'label'       => esc_html__( 'Custom Footer Text', 'smartadmin_spectrum' ),
+        'description' => esc_html__( 'HTML allowed. Use {year} for current year, {site} for site name.', 'smartadmin_spectrum' ),
         'section'     => 'smartadmin_spectrum_footer_section',
         'settings'    => 'smartadmin_spectrum_footer_custom_text',
         'type'        => 'textarea',
@@ -445,14 +445,14 @@ function smartadmin_spectrum_footer_customize_register( $wp_customize ) {
         'sanitize_callback' => 'smartadmin_spectrum_sanitize_footer_layout',
     ) );
     $wp_customize->add_control( 'smartadmin_spectrum_footer_layout_control', array(
-        'label'    => esc_html__( 'Footer Layout', 'smartadmin-spectrum' ),
+        'label'    => esc_html__( 'Footer Layout', 'smartadmin_spectrum' ),
         'section'  => 'smartadmin_spectrum_footer_section',
         'settings' => 'smartadmin_spectrum_footer_layout',
         'type'     => 'select',
         'choices'  => array(
-            'left'   => esc_html__( 'Left Aligned', 'smartadmin-spectrum' ),
-            'center' => esc_html__( 'Center Aligned', 'smartadmin-spectrum' ),
-            'right'  => esc_html__( 'Right Aligned', 'smartadmin-spectrum' ),
+            'left'   => esc_html__( 'Left Aligned', 'smartadmin_spectrum' ),
+            'center' => esc_html__( 'Center Aligned', 'smartadmin_spectrum' ),
+            'right'  => esc_html__( 'Right Aligned', 'smartadmin_spectrum' ),
         ),
     ) );
     
@@ -462,8 +462,8 @@ function smartadmin_spectrum_footer_customize_register( $wp_customize ) {
         'sanitize_callback' => 'smartadmin_spectrum_sanitize_checkbox',
     ) );
     $wp_customize->add_control( 'smartadmin_spectrum_footer_show_wp_control', array(
-        'label'       => esc_html__( 'Show "Powered by WordPress"', 'smartadmin-spectrum' ),
-        'description' => esc_html__( 'Only applies to Default display mode.', 'smartadmin-spectrum' ),
+        'label'       => esc_html__( 'Show "Powered by WordPress"', 'smartadmin_spectrum' ),
+        'description' => esc_html__( 'Only applies to Default display mode.', 'smartadmin_spectrum' ),
         'section'     => 'smartadmin_spectrum_footer_section',
         'settings'    => 'smartadmin_spectrum_footer_show_wp',
         'type'        => 'checkbox',
@@ -496,11 +496,11 @@ function smartadmin_spectrum_sanitize_footer_layout( $input ) {
 function smartadmin_spectrum_fallback_menu() {
     if ( current_user_can( 'edit_theme_options' ) ) {
         echo '<ul id="primary-menu" class="main-nav-list">';
-        echo '<li><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '">' . esc_html__( 'Add a menu', 'smartadmin-spectrum' ) . '</a></li>';
+        echo '<li><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '">' . esc_html__( 'Add a menu', 'smartadmin_spectrum' ) . '</a></li>';
         echo '</ul>';
     } else {
         echo '<ul id="primary-menu" class="main-nav-list">';
-        echo '<li><a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html__( 'Home', 'smartadmin-spectrum' ) . '</a></li>';
+        echo '<li><a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html__( 'Home', 'smartadmin_spectrum' ) . '</a></li>';
         echo '</ul>';
     }
 }

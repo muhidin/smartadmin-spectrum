@@ -29,21 +29,21 @@ get_header(); ?>
                 the_content(); 
                 
                 wp_link_pages( array(
-                    'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'smartadmin-spectrum' ),
+                    'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'smartadmin_spectrum' ),
                     'after'  => '</div>',
                 ) );
                 ?>
             </div>
 
             <footer class="entry-footer" style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
-                <?php the_tags( '<span class="tags-links">' . esc_html__( 'Tags: ', 'smartadmin-spectrum' ), ', ', '</span>' ); ?>
+                <?php the_tags( '<span class="tags-links">' . esc_html__( 'Tags: ', 'smartadmin_spectrum' ), ', ', '</span>' ); ?>
             </footer>
         </article>
 
         <div class="post-navigation-wrapper" style="margin: 40px 0;">
             <?php the_post_navigation( array(
-                'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'smartadmin-spectrum' ) . '</span> <span class="nav-title">%title</span>',
-                'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'smartadmin-spectrum' ) . '</span> <span class="nav-title">%title</span>',
+                'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'smartadmin_spectrum' ) . '</span> <span class="nav-title">%title</span>',
+                'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'smartadmin_spectrum' ) . '</span> <span class="nav-title">%title</span>',
             ) ); ?>
         </div>
 
