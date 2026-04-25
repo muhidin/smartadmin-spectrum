@@ -1,5 +1,7 @@
 <?php
 /**
+ * Copyright 2026 Muhidin Saimin
+ *
  * The header for our theme
  *
  * This is the template that displays all of the <head> section and everything up until <header>
