@@ -3,7 +3,7 @@ Contributors: muhidin-saimin
 Requires at least: 5.0
 Tested up to: 6.5
 Requires PHP: 7.0
-Stable tag: 1.1.5
+Stable tag: 1.1.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -77,6 +77,11 @@ Buka Appearance > Customize > Hero Slider Settings dan pilih "Full Width Contain
 3. Mobile responsive view showing the streamlined content-first layout.
 
 == Changelog ==
+
+= 1.1.6 =
+* FIXED: Added complete GPL license text in style.css header to resolve WordPress Theme Check copyright notice warning.
+* FIXED: Updated copyright notice format to match WordPress.org GPL requirements with full license text.
+* IMPROVED: Theme now includes proper GPL license disclaimer following WordPress.org standards.
 
 = 1.1.5 =
 * FIXED: Added explicit copyright notice in style.css header to resolve WordPress Theme Check warning.
