@@ -1,5 +1,96 @@
 document.addEventListener("DOMContentLoaded", function() {
     console.log("Swiper init script loaded");
+    
+    // Enhanced multi-level menu support
+    const submenuItems = document.querySelectorAll('.menu-item-has-children');
+    
+    submenuItems.forEach(item => {
+        const submenu = item.querySelector('.sub-menu');
+        if (submenu) {
+            // Prevent submenu from closing when clicking on items
+            submenu.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+            
+            // Force submenu visibility on hover for all levels
+            item.addEventListener('mouseenter', function() {
+                const allSubmenus = item.querySelectorAll('.sub-menu');
+                allSubmenus.forEach(sub => {
+                    sub.style.display = 'block';
+                    sub.style.pointerEvents = 'auto';
+                });
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                const allSubmenus = item.querySelectorAll('.sub-menu');
+                allSubmenus.forEach(sub => {
+                    sub.style.display = 'none';
+                });
+            });
+        }
+    });
+    
+    // Handle multi-level hover transitions
+    const allSubmenuItems = document.querySelectorAll('.sub-menu .menu-item-has-children');
+    
+    allSubmenuItems.forEach(item => {
+        const submenu = item.querySelector('.sub-menu');
+        if (submenu) {
+            item.addEventListener('mouseenter', function() {
+                submenu.style.display = 'block';
+                submenu.style.pointerEvents = 'auto';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                submenu.style.display = 'none';
+            });
+        }
+    });
+    
+    // Search toggle functionality (if search exists)
+    const searchButton = document.querySelector('.search-button');
+    const searchFormWrapper = document.querySelector('.search-form-wrapper');
+    const searchInput = document.querySelector('.search-form-wrapper input[type="search"]');
+    
+    if (searchButton && searchFormWrapper) {
+        searchButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            const isExpanded = searchButton.getAttribute('aria-expanded') === 'true';
+            
+            if (isExpanded) {
+                searchFormWrapper.style.display = 'none';
+                searchButton.setAttribute('aria-expanded', 'false');
+            } else {
+                searchFormWrapper.style.display = 'block';
+                searchButton.setAttribute('aria-expanded', 'true');
+                
+                // Focus on search input when opened
+                if (searchInput) {
+                    setTimeout(() => {
+                        searchInput.focus();
+                    }, 100);
+                }
+            }
+        });
+        
+        // Close search form when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!searchFormWrapper.contains(e.target) && !searchButton.contains(e.target)) {
+                searchFormWrapper.style.display = 'none';
+                searchButton.setAttribute('aria-expanded', 'false');
+            }
+        });
+        
+        // Close search form on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && searchFormWrapper.style.display === 'block') {
+                searchFormWrapper.style.display = 'none';
+                searchButton.setAttribute('aria-expanded', 'false');
+                searchButton.focus();
+            }
+        });
+    }
+    
     const sliderElement = document.querySelector(".hero-slider");
     console.log("Slider element:", sliderElement);
     console.log("Slider classes:", sliderElement ? sliderElement.className : "No element found");

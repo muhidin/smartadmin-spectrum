@@ -28,6 +28,24 @@
     <?php esc_html_e( 'Skip to content', 'smartadmin-spectrum' ); ?>
 </a>
 
+<!-- Top Header Menu -->
+<div class="top-header">
+    <div class="<?php echo esc_attr( get_theme_mod( 'smartadmin_spectrum_layout_container', 'container' ) ); ?>">
+        <nav id="top-navigation" class="top-navigation">
+            <?php
+            wp_nav_menu( array(
+                'theme_location' => 'top',
+                'menu_id'        => 'top-menu',
+                'container'      => false,
+                'menu_class'     => 'top-nav-list',
+                'depth'          => 1,
+                'fallback_cb'    => false,
+            ) );
+            ?>
+        </nav>
+    </div>
+</div>
+
 <?php
     // Get header background image
     $header_bg_image = get_theme_mod( 'smartadmin_spectrum_header_background_image', '' );
@@ -103,10 +121,40 @@
                 'menu_id'        => 'primary-menu',
                 'container'      => false,
                 'menu_class'     => 'main-nav-list',
-                'depth'          => 2,
-                'fallback_cb'    => 'smartadmin_spectrum_fallback_menu',
+                'depth'          => 5,
+                'fallback_cb'    => false,
+            ) );
+            ?>
+            
+            <div class="search-inline">
+                <form role="search" method="get" class="search-form-inline" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+                    <label class="screen-reader-text" for="search-field-inline"><?php esc_html_e( 'Search for:', 'smartadmin-spectrum' ); ?></label>
+                    <input type="search" id="search-field-inline" class="search-field-inline" placeholder="<?php esc_attr_e( 'Search...', 'smartadmin-spectrum' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+                    <button type="submit" class="search-submit-inline">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- Bottom Header Menu -->
+<div class="bottom-header">
+    <div class="<?php echo esc_attr( get_theme_mod( 'smartadmin_spectrum_layout_container', 'container' ) ); ?>">
+        <nav id="bottom-navigation" class="bottom-navigation">
+            <?php
+            wp_nav_menu( array(
+                'theme_location' => 'bottom',
+                'menu_id'        => 'bottom-menu',
+                'container'      => false,
+                'menu_class'     => 'bottom-nav-list',
+                'depth'          => 1,
+                'fallback_cb'    => false,
             ) );
             ?>
         </nav>
     </div>
-</header>
+</div>

@@ -29,7 +29,21 @@
     if ( $footer_display_mode !== 'hidden' ) :
 ?>
     <footer id="colophon" class="site-footer footer-<?php echo esc_attr( $footer_layout ); ?>">
-        <div class="container">
+        <div class="<?php echo esc_attr( get_theme_mod( 'smartadmin_spectrum_layout_container', 'container' ) ); ?>">
+            <!-- Footer Menu -->
+            <nav id="footer-navigation" class="footer-navigation">
+                <?php
+                wp_nav_menu( array(
+                    'theme_location' => 'footer',
+                    'menu_id'        => 'footer-menu',
+                    'container'      => false,
+                    'menu_class'     => 'footer-nav-list',
+                    'depth'          => 1,
+                    'fallback_cb'    => false,
+                ) );
+                ?>
+            </nav>
+            
             <div class="site-info">
                 <?php
                 $footer_content = '';

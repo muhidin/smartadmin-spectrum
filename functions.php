@@ -49,6 +49,9 @@ function smartadmin_spectrum_setup() {
     // Register navigation menus.
     register_nav_menus( array(
         'primary' => esc_html__( 'Primary Menu', 'smartadmin-spectrum' ),
+        'top'     => esc_html__( 'Top Menu', 'smartadmin-spectrum' ),
+        'bottom'  => esc_html__( 'Bottom Menu', 'smartadmin-spectrum' ),
+        'footer'  => esc_html__( 'Footer Menu', 'smartadmin-spectrum' ),
     ) );
 
     // Switch default core markup to output valid HTML5.
@@ -508,17 +511,3 @@ function smartadmin_spectrum_sanitize_footer_layout( $input ) {
     return ( in_array( $input, $valid ) ? $input : 'center' );
 }
 
-/**
- * Fallback menu function when no menu is assigned
- */
-function smartadmin_spectrum_fallback_menu() {
-    if ( current_user_can( 'edit_theme_options' ) ) {
-        echo '<ul id="primary-menu" class="main-nav-list">';
-        echo '<li><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '">' . esc_html__( 'Add a menu', 'smartadmin-spectrum' ) . '</a></li>';
-        echo '</ul>';
-    } else {
-        echo '<ul id="primary-menu" class="main-nav-list">';
-        echo '<li><a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html__( 'Home', 'smartadmin-spectrum' ) . '</a></li>';
-        echo '</ul>';
-    }
-}
