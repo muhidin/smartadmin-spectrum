@@ -438,7 +438,12 @@ nav ul li:hover > ul.sub-menu {
     pointer-events: auto;
 }
 
-/* Multi-level hover support */
+/* Multi-level hover support - Enhanced specificity */
+nav ul li:hover > ul.sub-menu {
+    display: block;
+    pointer-events: auto;
+}
+
 nav ul li ul.sub-menu li:hover > ul.sub-menu {
     display: block;
     pointer-events: auto;
@@ -457,6 +462,32 @@ nav ul li ul.sub-menu ul.sub-menu ul.sub-menu li:hover > ul.sub-menu {
 nav ul li ul.sub-menu ul.sub-menu ul.sub-menu ul.sub-menu li:hover > ul.sub-menu {
     display: block;
     pointer-events: auto;
+}
+
+/* Additional hover support with !important for override */
+nav ul li.menu-item-has-children:hover > ul.sub-menu {
+    display: block !important;
+    pointer-events: auto !important;
+}
+
+nav ul li ul.sub-menu .menu-item-has-children:hover > ul.sub-menu {
+    display: block !important;
+    pointer-events: auto !important;
+}
+
+nav ul li ul.sub-menu ul.sub-menu .menu-item-has-children:hover > ul.sub-menu {
+    display: block !important;
+    pointer-events: auto !important;
+}
+
+nav ul li ul.sub-menu ul.sub-menu ul.sub-menu .menu-item-has-children:hover > ul.sub-menu {
+    display: block !important;
+    pointer-events: auto !important;
+}
+
+nav ul li ul.sub-menu ul.sub-menu ul.sub-menu ul.sub-menu .menu-item-has-children:hover > ul.sub-menu {
+    display: block !important;
+    pointer-events: auto !important;
 }
 
 /* Multi-level submenu positioning */

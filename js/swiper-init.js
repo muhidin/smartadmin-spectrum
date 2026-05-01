@@ -1,50 +1,74 @@
 document.addEventListener("DOMContentLoaded", function() {
     console.log("Swiper init script loaded");
     
-    // Enhanced multi-level menu support
-    const submenuItems = document.querySelectorAll('.menu-item-has-children');
+    // Enhanced multi-level menu support with event delegation
+    function setupMenuHover() {
+        // Handle all menu items with children at any level
+        const allMenuItemsWithChildren = document.querySelectorAll('.menu-item-has-children');
+        
+        allMenuItemsWithChildren.forEach(item => {
+            const submenu = item.querySelector('.sub-menu');
+            if (submenu) {
+                // Prevent submenu from closing when clicking on items
+                submenu.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+                
+                // Enhanced hover handling for all levels
+                item.addEventListener('mouseenter', function(e) {
+                    e.stopPropagation();
+                    // Show this item's submenu
+                    submenu.style.display = 'block';
+                    submenu.style.pointerEvents = 'auto';
+                    submenu.style.zIndex = '99999';
+                });
+                
+                item.addEventListener('mouseleave', function(e) {
+                    e.stopPropagation();
+                    // Hide this item's submenu
+                    submenu.style.display = 'none';
+                });
+            }
+        });
+        
+        // Additional event delegation for nested submenus
+        document.addEventListener('mouseover', function(e) {
+            const menuItem = e.target.closest('.menu-item-has-children');
+            if (menuItem) {
+                const submenu = menuItem.querySelector('.sub-menu');
+                if (submenu) {
+                    submenu.style.display = 'block';
+                    submenu.style.pointerEvents = 'auto';
+                }
+            }
+        });
+        
+        document.addEventListener('mouseout', function(e) {
+            const menuItem = e.target.closest('.menu-item-has-children');
+            if (menuItem) {
+                const submenu = menuItem.querySelector('.sub-menu');
+                if (submenu && !menuItem.contains(e.relatedTarget)) {
+                    submenu.style.display = 'none';
+                }
+            }
+        });
+    }
     
-    submenuItems.forEach(item => {
-        const submenu = item.querySelector('.sub-menu');
-        if (submenu) {
-            // Prevent submenu from closing when clicking on items
-            submenu.addEventListener('click', function(e) {
-                e.stopPropagation();
-            });
-            
-            // Force submenu visibility on hover for all levels
-            item.addEventListener('mouseenter', function() {
-                const allSubmenus = item.querySelectorAll('.sub-menu');
-                allSubmenus.forEach(sub => {
-                    sub.style.display = 'block';
-                    sub.style.pointerEvents = 'auto';
-                });
-            });
-            
-            item.addEventListener('mouseleave', function() {
-                const allSubmenus = item.querySelectorAll('.sub-menu');
-                allSubmenus.forEach(sub => {
-                    sub.style.display = 'none';
-                });
-            });
-        }
+    // Initialize menu hover functionality
+    setupMenuHover();
+    
+    // Re-initialize if DOM changes (for dynamic content)
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.type === 'childList') {
+                setupMenuHover();
+            }
+        });
     });
     
-    // Handle multi-level hover transitions
-    const allSubmenuItems = document.querySelectorAll('.sub-menu .menu-item-has-children');
-    
-    allSubmenuItems.forEach(item => {
-        const submenu = item.querySelector('.sub-menu');
-        if (submenu) {
-            item.addEventListener('mouseenter', function() {
-                submenu.style.display = 'block';
-                submenu.style.pointerEvents = 'auto';
-            });
-            
-            item.addEventListener('mouseleave', function() {
-                submenu.style.display = 'none';
-            });
-        }
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
     });
     
     // Search toggle functionality (if search exists)
